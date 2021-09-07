@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: FMI, Introduction to BlockChain 2021
-pragma solidity ^0.7.4;
+pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
 contract Library {
@@ -29,7 +29,7 @@ contract Library {
     Book[] private catalogue;
 
     constructor() {
-        owner = msg.sender;
+        owner = payable(msg.sender);
         emit RentPriceChanged(0, RENT_PRICE);
     }
 
